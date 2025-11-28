@@ -1,4 +1,4 @@
-//JSON parsing Read
+//JSON parse Read
 
 /* when you are doing a parsing the position like this key:VALUE.
 redecalring they key is allowed but it will overwrite and bugs
@@ -92,4 +92,62 @@ console.log(persons);
 persons.middleInitial = "D";
 console.log(persons);
 
-//continue JSON STRINGIFY - 34 mins and 3 secs
+//JSON STRINGIFY - it will be String
+let newPerson = {
+    firstName : "Cy",
+    lastName : "Yleana",
+    age: 22,
+    hobbiest:["Coding", "Playing", "Sleeping"],
+    pets: {
+        0:{
+            name:"Shadow",
+            type:"Dog"
+        },
+        1:{
+            name:"Mocha",
+            type:"Cat"
+        }
+    }
+}
+
+console.log(newPerson);
+let strPerson = JSON.stringify(newPerson);
+console.log(strPerson);
+
+//JSON Parsing - from string to parse
+//always put a Double quotes of key name : Value name
+let stringPerson = `{"firstName":"David","lastName":"SDPT","age":22}`;
+
+let parsePerson = JSON.parse(stringPerson);
+console.log(parsePerson);
+
+//JSON Array
+/*its just a normal array you need a square bracket
+but you to declare as json you need a curly braces inside of square*/
+let people = [
+    {
+        firstName: "David",
+        lastName: "SDPT",
+        age:21
+    },
+    {
+        firstName: "Alenere",
+        lastName: "SDPT",
+        age:22
+    },
+    {
+        firstName: "Jaymar",
+        lastName: "Catapang",
+        age:23
+    }
+];
+
+console.log(`${people[1].firstName} ${people[1].lastName}`);
+
+for(let i = 0; i <people.length; i++){
+    
+    console.log(`First Name :${people[i].firstName}`);
+    console.log(`Last Name :${people[i].lastName}`);
+    console.log(`Age :${people[i].age}`);
+    console.log(" ")
+};
